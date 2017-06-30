@@ -87,12 +87,12 @@ namespace warp2d_kernel_internal
       int x0, y0, x1, y1, x2, y2, x3, y3;
       x0 = p2i.x();
       y0 = p2i.y();
-      x1 = p2i.x()+1;
+      x1 = max(p2i.x(), p2i.x()+1);
       y1 = p2i.y();
       x2 = p2i.x();
-      y2 = p2i.y()+1;
-      x3 = p2i.x()+1;
-      y3 = p2i.y()+1;
+      y2 = max(p2i.y(), p2i.y()+1);
+      x3 = max(p2i.x(), p2i.x()+1);
+      y3 = max(p2i.y(), p2i.y()+1);
       for( int z = 0; z < z_size; ++z )
       {
         if( x0 >= 0 && x3 < x_size && y0 >= 0 && y3 < y_size )

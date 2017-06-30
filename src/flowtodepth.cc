@@ -419,7 +419,7 @@ public:
         xvec[0] = x1;
         xvec[1] = x2;
         Vec3 X = triangulateLinear(Pvec,xvec);
-        if( matrix_is_finite(X) && X.z() > 0 )
+        if( matrix_is_finite(X) && X.z() > 0.01 )
         {
           if( INVERSE_DEPTH )
             DEPTH(x,y) = 1/X.z();
